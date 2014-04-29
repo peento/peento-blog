@@ -5,8 +5,8 @@
  */
 
 module.exports = function (ns, debug) {
-  var utils = require('../../../lib/utils');
-  var utils = require('../../../lib/utils');
+  var utils = require('../../lib/utils');
+  var utils = require('../../lib/utils');
   return function (params, callback) {
     debug('get list');
     var user_list = ns('model.user_list');

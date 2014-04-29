@@ -6,6 +6,6 @@
 
 module.exports = function (ns, plugin, debug) {
 
-  plugin.load();
+  plugin.load(__dirname);
 
 };

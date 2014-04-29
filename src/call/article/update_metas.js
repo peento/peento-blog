@@ -6,7 +6,7 @@
 
 module.exports = function (ns, debug) {
   var async = require('async');
-  var utils = require('../../../lib/utils');
+  var utils = require('../../lib/utils');
   return function (params, callback) {
     debug('update metas: [%s]', params.id);
     var article_meta = ns('model.article_meta');

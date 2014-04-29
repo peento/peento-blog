@@ -6,7 +6,7 @@
 
 module.exports = function (ns, debug) {
   var async = require('async');
-  var utils = require('../../../lib/utils');
+  var utils = require('../../lib/utils');
   return function (params, callback) {
     debug('add tag: [%s] %s', params.id, params.name);
     var article_tag = ns('model.article_tag');

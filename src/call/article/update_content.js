@@ -5,7 +5,7 @@
  */
 
 module.exports = function (ns, debug) {
-  var utils = require('../../../lib/utils');
+  var utils = require('../../lib/utils');
   return function (params, callback) {
     debug('update content: [%s]', params.id);
     var article_content = ns('model.article_content');

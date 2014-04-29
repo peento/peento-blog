@@ -5,7 +5,7 @@
  */
 
 module.exports = function (ns, registerFilter, debug) {
-  var utils = require('../../lib/utils');
+  var utils = require('../lib/utils');
   var app = ns('app');
 
 

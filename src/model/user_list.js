@@ -6,7 +6,7 @@
 
 module.exports = function (ns, createModel, debug) {
 
-  var utils = require('../../lib/utils');
+  var utils = require('../lib/utils');
 
   var model = createModel({
     connection: ns('db'),

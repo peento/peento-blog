@@ -14,5 +14,5 @@ config.mysql = {
 };
 
 config.model = {
-  limit: 20
+  limit: 10
 };

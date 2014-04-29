@@ -4,10 +4,11 @@
  * @author Zongmin Lei <leizongmin@gmail.com>
  */
 
-var peento = require('../');
+var peento = require('peento');
 
 var app = peento(require('./config'));
 
+app.use('blog');
 
 app.start();
 

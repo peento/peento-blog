@@ -6,7 +6,7 @@
 
 module.exports = function (ns, registerFilter, debug) {
   var formatUrl = require('url').format;
-  var utils = require('../../lib/utils');
+  var utils = require('../lib/utils');
 
   registerFilter('gravatar', function (email) {
     return '//www.gravatar.com/avatar/' + utils.md5(email || '');

@@ -6,7 +6,7 @@
 
 module.exports = function (ns, router) {
   var async = require('async');
-  var utils = require('../../lib/utils');
+  var utils = require('../lib/utils');
   var app = ns('app');
   var csrf = ns('middleware.csrf');
   var multiparty = ns('middleware.multiparty');
