@@ -1,1 +1,39 @@
 /* Peento default style */
+
+body {
+  margin-top: 51px;
+  background-color: #eee;
+}
+
+.navbar-default {
+  background-color: #eee;
+  border-width: 0;
+}
+
+.container {
+  max-width: 800px;
+  background: #fff;
+}
+
+.navbar-default .container {
+  background-color: #f8f8f8;
+}
+
+.tag-list {
+  padding-top: 10px;
+}
+.tag-list .btn {
+  margin-bottom: 6px;
+}
+
+.article-item {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.article-item h1 {
+  margin-top: 50px;
+  font-size: 28px;
+}
+.article-item .lead {
+  font-size: 16px;
+}

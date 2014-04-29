@@ -1,13 +1,31 @@
 {% include "front/inc/header" %}
 
-{% if _server.session.signin_user %}
-Hello, {{_server.session.signin_user.display_name|escape}}
-<hr>
-{% endif %}
+<div class="container">
 
-{% for item in articles %}
-  {{item.title|escape}}<br>
-{% endfor %}
+  <div class="tag-list">
+    {% assign tags = 0|get_tag_all %}
+    {% for item in tags %}
+    <a href="/?tags={{item|escape}}" class="btn btn-info">{{item|escape}}</a>
+    {% endfor %}
+    <hr>
+  </div>
+
+  {% for item in article_list %}
+  <section class="article-item">
+    <h1><a href="/article/{{item.id|escape}}">{{item.title|escape}}</a>
+    </h1>
+    <p class="lead">
+      by <a href="/?author_id={{item.author_id|escape}}">{{item.author_id|get_user_display_name|escape}}</a>
+      <span class="glyphicon glyphicon-time"></span>{{item.created_at|date:'%Y-%m-%d %H:%M:%S'}}</p>
+    </p>
+    <p>{{item.summary}}</p>
+    {% unless forloop.last %}<hr>{% endunless %}
+  </section>
+  {% endfor %}
+
+  {% include "admin/inc/pagination" count=article_count %}
+
+</div>
 
 {% include "front/inc/footer" %}
 
