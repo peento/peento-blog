@@ -31,4 +31,20 @@ module.exports = function (ns, router) {
     });
   });
 
+  router.get('/article/:id', function (req, res, next) {
+    async.series([
+
+      function (next) {
+        app.call('article.get', {id: req.params.id}, function (err, article) {
+          res.setLocals('article', article);
+          next(err);
+        });
+      }
+
+    ], function (err) {
+      if (err) return next(err);
+      res.render('front/article');
+    });
+  });
+
 };

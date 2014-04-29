@@ -1,0 +1,20 @@
+{% include "front/inc/header" %}
+
+<div class="container">
+
+  <section class="article-item">
+    <h1><a href="/article/{{article.id|escape}}">{{article.title|escape}}</a>
+    </h1>
+    <p class="lead">
+      by <a href="/?author_id={{article.author_id|escape}}">{{article.author_id|get_user_display_name|escape}}</a>
+      &nbsp;&nbsp;<span class="glyphicon glyphicon-time"></span>{{article.created_at|date:'%Y-%m-%d %H:%M:%S'}}</p>
+    </p>
+    <div class="content">{{article.content}}</div>
+  </section>
+
+</div>
+
+{% include "front/inc/footer" %}
+
+<!-- common javascript -->
+<script src="{{'default/main.js'|asset_url}}"></script>

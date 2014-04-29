@@ -37,3 +37,7 @@ body {
 .article-item .lead {
   font-size: 16px;
 }
+.article-item .content {
+  margin-top: 60px;
+  min-height: 400px;
+}

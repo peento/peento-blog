@@ -16,7 +16,7 @@
     </h1>
     <p class="lead">
       by <a href="/?author_id={{item.author_id|escape}}">{{item.author_id|get_user_display_name|escape}}</a>
-      <span class="glyphicon glyphicon-time"></span>{{item.created_at|date:'%Y-%m-%d %H:%M:%S'}}</p>
+      &nbsp;&nbsp;<span class="glyphicon glyphicon-time"></span>{{item.created_at|date:'%Y-%m-%d %H:%M:%S'}}</p>
     </p>
     <p>{{item.summary}}</p>
     {% unless forloop.last %}<hr>{% endunless %}
