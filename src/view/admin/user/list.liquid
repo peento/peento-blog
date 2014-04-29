@@ -1,0 +1,41 @@
+{% assign title = "User List" %}
+{% include "admin/inc/header" %}
+
+<div class="container">
+
+  <a href="/admin/user/new" class="btn btn-xs btn-primary">New User</a>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th width="60">ID</th>
+          <th width="200">Display Name</th>
+          <th>E-mail</th>
+          <th width="110">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in users %}
+        <tr class="user-item">
+          <td>{{item.id}}</td>
+          <td>{{item.display_name|escape}}</td>
+          <td>{{item.email|escape}}</td>
+          <td>
+            <a href="/admin/user/{{item.id}}/edit" class="btn btn-xs btn-info">Edit</a>
+            <button class="btn btn-xs btn-danger delete-user" data-id="{{item.id}}">Delete</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% include "admin/inc/pagination" count=user_count %}
+
+</div>
+
+{% include "admin/inc/footer" %}
+
+<!-- common javascript -->
+<script src="{{'default/admin.js'|asset_url}}"></script>

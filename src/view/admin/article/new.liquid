@@ -1,0 +1,59 @@
+{% assign title = "New Article" %}
+{% include "admin/inc/header" %}
+
+<div class="container">
+  <h1 class="text-center">{{title|escape}}</h1>
+  <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="_csrf" value="{{_csrf|escape}}">
+    {% if error %}
+      <div class="alert alert-danger">{{error|escape}}</div>
+    {% endif %}
+    <div class="form-group">
+      <label for="ipt-title" class="col-sm-2 control-label">Title</label>
+      <div class="col-sm-10">
+        <input type="text" name="title" class="form-control" id="ipt-title" placeholder="Title" value="{{article.title|escape}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="ipt-summary" class="col-sm-2 control-label">Summary</label>
+      <div class="col-sm-10">
+        <textarea name="summary" class="form-control" id="ipt-summary" rows="3">{{article.summary|escape}}</textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="ipt-tags" class="col-sm-2 control-label">Tags</label>
+      <div class="col-sm-10">
+        <input type="text" name="tags" class="form-control" id="ipt-tags" placeholder="Tags" value="{{article.tags|join:','|escape}}" role="tag-it" data-tags="{{article.tags|join:','|escape}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="ipt-sort" class="col-sm-2 control-label">Sort</label>
+      <div class="col-sm-2 col-md-1">
+        <input type="number" name="sort" class="form-control" id="ipt-sort" placeholder="0" value="{{article.sort}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="ipt-content" class="col-sm-2 control-label">Content</label>
+      <div class="col-sm-10">
+        <textarea name="content" class="form-control" id="ipt-content" rows="20">{{article.content|escape}}</textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+{% include "admin/inc/footer" %}
+
+<!-- Tag-it -->
+<link href="{{'lib/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.min.css'|asset_url}}" rel="stylesheet">
+<link href="{{'lib/tag-it/css/jquery.tagit.css'|asset_url}}" rel="stylesheet">
+<script src="{{'lib/jquery-ui/js/jquery-ui-1.10.4.custom.min.js'|asset_url}}"></script>
+<script src="{{'lib/tag-it/js/tag-it.min.js'|asset_url}}"></script>
+
+<!-- common javascript -->
+<script src="{{'default/admin.js'|asset_url}}"></script>

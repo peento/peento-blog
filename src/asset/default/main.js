@@ -1,0 +1,1 @@
+/* Peento default JavaScript */

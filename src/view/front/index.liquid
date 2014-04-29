@@ -1,0 +1,15 @@
+{% include "front/inc/header" %}
+
+{% if _server.session.signin_user %}
+Hello, {{_server.session.signin_user.display_name|escape}}
+<hr>
+{% endif %}
+
+{% for item in articles %}
+  {{item.title|escape}}<br>
+{% endfor %}
+
+{% include "front/inc/footer" %}
+
+<!-- common javascript -->
+<script src="{{'default/main.js'|asset_url}}"></script>

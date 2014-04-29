@@ -1,0 +1,70 @@
+{% assign title = "Tag List" %}
+{% include "admin/inc/header" %}
+
+<div class="container page-admin-tag">
+  <div class="row">
+
+    <div class="col-md-3 tag-list">
+      {% assign tags = 0|get_tag_all %}
+      {% for item in tags %}
+      <a href="/admin/tag/{{item|escape}}" class="btn btn-info">{{item|escape}}</a>
+      {% endfor %}
+    </div>
+
+    <div class="col-md-9">
+
+      {% if articles.length > 0 %}
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th width="60">ID</th>
+              <th>Title</th>
+              <th width="200">Tags</th>
+              <th width="100">Author</th>
+              <th width="155">Updated</th>
+              <th width="60">Sort</th>
+              <th width="60">&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in articles %}
+            <tr class="article-item">
+              <td>{{item.id}}</td>
+              <td>
+                <a href="/article/{{item.id}}" target="_blank">{{item.title|escape}}</a>
+              </td>
+              <td>
+                {% assign item_tags = item.id|get_article_tags %}
+                {% for tag in item_tags %}
+                <a href="/admin/tag/{{tag|escape}}">{{tag|escape}}</a>{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+              </td>
+              <td>
+                <a href="/admin/user/{{item.author_id}}">{{item.author_id|get_user_display_name|escape}}</a>
+              </td>
+              <td>{{item.updated_at|date:'%Y-%m-%d %H:%M:%S'}}</td>
+              <td>{{item.sort}}</td>
+              <td>
+                <a href="/admin/article/{{item.id}}/edit" class="btn btn-xs btn-info">Edit</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      {% include "admin/inc/pagination" count=article_count %}
+
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>
+
+{% include "admin/inc/footer" %}
+
+<!-- common javascript -->
+<script src="{{'default/admin.js'|asset_url}}"></script>
