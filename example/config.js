@@ -1,6 +1,8 @@
 var config = exports;
 
 
+config.debug = true;
+
 config.port = 3001;
 
 
