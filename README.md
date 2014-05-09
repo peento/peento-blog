@@ -62,6 +62,7 @@ peento-blog提供了以下服务：
 + [系统调用](https://github.com/peento/peento-blog/wiki/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8)
 + [基本页面](https://github.com/peento/peento-blog/wiki/%E5%9F%BA%E6%9C%AC%E9%A1%B5%E9%9D%A2)
 + [模板函数](https://github.com/peento/peento-blog/wiki/%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0)
++ [相关插件](https://github.com/peento/peento-blog/wiki/%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6)
 
 
 授权协议
