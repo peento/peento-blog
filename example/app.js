@@ -11,6 +11,7 @@ var app = peento(require('./config'));
 app.use('blog');
 
 app.use('blog-simditor');
+app.use('blog-share-jiathis');
 
 app.start();
 
