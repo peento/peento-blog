@@ -8,17 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/leizongmin/peento.git"
+    "url": "git://github.com/peento/peento-blog.git"
   },
   "keywords": [
+    "peento",
     "blog"
   ],
   "author": "Zongmin Lei <leizongmin@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/leizongmin/peento/issues"
+    "url": "https://github.com/peento/peento-blog/issues"
   },
-  "homepage": "https://github.com/leizongmin/peento",
+  "homepage": "https://github.com/peento/peento-blog",
   "dependencies": {
     "debug": "^0.8.0",
     "markdown": "~0.5.0",
