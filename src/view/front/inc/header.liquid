@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Icons 16x16 -->
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico?v=1397546313318">
-  <title>Peento</title>
+  <title>{% if title %}{{title|escape}}{% else %}Peento Blog{% endif %}</title>
   <!-- Bootstrap core CSS -->
   <link href="{{'lib/bootstrap/css/bootstrap.css'|asset_url}}" rel="stylesheet">
   <!-- Custom CSS -->
