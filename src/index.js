@@ -1,5 +1,5 @@
 /**
- * Peento Default Plugin
+ * peento-blog
  *
  * @author Zongmin Lei <leizongmin@gmail.com>
  */
