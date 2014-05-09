@@ -23,3 +23,8 @@ config.model = {
 config.duoshuo = {
   name: 'peento'
 };
+
+// Disqus插件配置
+config.disqus = {
+  name: 'peento'
+};
