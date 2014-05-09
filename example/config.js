@@ -18,3 +18,8 @@ config.mysql = {
 config.model = {
   limit: 10
 };
+
+// 多说插件配置
+config.duoshuo = {
+  name: 'peento'
+};

@@ -12,6 +12,7 @@ app.use('blog');
 
 app.use('blog-simditor');
 app.use('blog-share-jiathis');
+app.use('blog-comment-duoshuo');
 
 app.start();
 
