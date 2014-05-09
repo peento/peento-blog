@@ -10,7 +10,33 @@ peento-blog实际上是一个peento插件，通过以下方式使用：
 $ npm install peento peento-blog
 ```
 
-2、应用启动文件代码：
+2、创建MySQL表结构：
+
+参考文件 [install/tables.sql](https://github.com/peento/peento-blog/blob/master/install/tables.sql)
+
+4、新建配置文件 `config.js` ：
+
+```JavaScript
+var config = exports;
+
+// 是否开启调试模式
+config.debug = true;
+
+// 监听端口
+config.port = 3000;
+
+// MySQL数据库配置
+config.mysql = {
+  host: '127.0.0.1',
+  port: 3306,
+  user: 'peento',
+  password: 'peento:ooxx=fuck',
+  database: 'peento',
+  pool: 5
+};
+```
+
+5、新建启动文件 `app.js` ：
 
 ```JavaScript
 var peento = require('peento');
@@ -22,6 +48,15 @@ app.use('blog');
 
 app.start();
 ```
+
+6、启动程序：
+
+```bash
+$ node app
+```
+
+7、打开URL： http://127.0.0.1:3000
+
 
 peento-blog提供了以下服务：
 
