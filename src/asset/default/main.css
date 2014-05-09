@@ -29,6 +29,7 @@ body {
 .article-item {
   font-size: 16px;
   line-height: 1.6;
+  margin-bottom: 50px;
 }
 .article-item h1 {
   margin-top: 50px;
