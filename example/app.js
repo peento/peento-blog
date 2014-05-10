@@ -13,6 +13,7 @@ app.use('blog');
 app.use('blog-simditor');
 app.use('blog-share-jiathis');
 app.use('blog-comment-disqus');
+app.use('blog-search-google');
 
 app.start();
 

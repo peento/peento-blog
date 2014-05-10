@@ -28,3 +28,8 @@ config.duoshuo = {
 config.disqus = {
   name: 'peento'
 };
+
+// Google搜索配置
+config.search = {
+  host: 'ucdok.com'
+};
