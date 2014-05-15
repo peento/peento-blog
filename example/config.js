@@ -18,18 +18,3 @@ config.mysql = {
 config.model = {
   limit: 10
 };
-
-// 多说插件配置
-config.duoshuo = {
-  name: 'peento'
-};
-
-// Disqus插件配置
-config.disqus = {
-  name: 'peento'
-};
-
-// Google搜索配置
-config.search = {
-  host: 'ucdok.com'
-};

@@ -12,6 +12,8 @@ app.use('blog');
 
 app.use('blog-simditor');
 app.use('blog-share-jiathis');
+app.use('blog-comment-disqus');
+app.use('blog-comment-duoshuo');
 app.use('blog-comment-local');
 app.use('blog-search-google');
 
