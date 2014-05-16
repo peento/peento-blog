@@ -6,7 +6,7 @@ body {
 }
 
 body > footer {
-  max-width: 800px;
+  max-width: 825px;
   margin: 20px auto;
   text-align: center;
 }
@@ -23,6 +23,11 @@ body > footer {
 
 .navbar-default .container {
   background-color: #f8f8f8;
+}
+
+.signin-panel, .signup-panel {
+  margin-top: 70px;
+  margin-bottom: 100px;
 }
 
 .tag-list {
