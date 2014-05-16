@@ -14,7 +14,7 @@ module.exports = function (ns, createModel, debug) {
     fields: {
       name:      'string',
       type:      'number',
-      parent:    'string',
+      parent:    '*',
       title:     'string',
       url:       'string',
       sort:      'number'

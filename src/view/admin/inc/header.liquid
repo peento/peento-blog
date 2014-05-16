@@ -31,10 +31,9 @@
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/admin/article/list">Articles</a></li>
-          <li><a href="/admin/tag">Tags</a></li>
-          <li><a href="/admin/user/list">Users</a></li>
-          <li><a href="/admin/setting">Setting</a></li>
+        {% for item in _nav_admin %}
+          <li><a href="{{item.url|escape}}">{{item.title|escape}}</a></li>
+        {% endfor %}
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/" target="_blank">Preview</a></li>

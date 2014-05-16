@@ -12,7 +12,7 @@ module.exports = function (ns, debug) {
     params = utils.cloneObject(params);
 
     var query = {};
-    if (params.parent) query.parent = params.parent;
+    if ('parent' in params) query.parent = params.parent;
     if (params.type >= 0) query.type = params.type;
 
     if (!params.order) params.order = '';
