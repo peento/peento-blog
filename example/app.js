@@ -46,3 +46,16 @@ app.call('article.update', {
 */
 //app.call('article.get_list', {author_id: 1, limit: 2}, callback);
 //app.call('user.get_count', {}, callback);
+/*
+app.call('nav.update', {
+  name: 'comment_local_admin_list',
+  type: 2,
+  title: 'Comments',
+  url: '/admin/comment/list'
+}, callback);
+*/
+/*
+app.call('nav.get_list', {
+  type: 2
+}, callback);
+*/
