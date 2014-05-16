@@ -32,7 +32,19 @@
       <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
         {% for item in _nav_admin %}
+          {% assign nav_list = item.name|get_nav_list %}
+          {% if nav_list.length > 0 %}
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{item.title|escape}} <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+            {% for item2 in nav_list %}
+              <li><a href="{{item2.url|escape}}">{{item2.title|escape}}</a></li>
+            {% endfor %}
+            </ul>
+          </li>
+          {% else %}
           <li><a href="{{item.url|escape}}">{{item.title|escape}}</a></li>
+          {% endif %}
         {% endfor %}
         </ul>
         <ul class="nav navbar-nav navbar-right">

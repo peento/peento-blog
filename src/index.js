@@ -50,7 +50,7 @@ module.exports = function (ns, plugin, debug) {
           console.error((err && err.stack) || err);
         }
       });
-    })
+    });
 
   });
 
