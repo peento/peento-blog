@@ -1,13 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.0.1
+-- version 4.0.7
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 04 月 18 日 02:18
--- 服务器版本: 5.1.36
--- PHP 版本: 5.2.11
+-- 生成日期: 2014-07-06 11:20:07
+-- 服务器版本: 5.5.34-log
+-- PHP 版本: 5.3.27
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- 数据库: `peento`
@@ -46,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `article_list` (
   KEY `updated_at` (`updated_at`),
   KEY `is_removed` (`is_removed`),
   KEY `sort` (`sort`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -81,6 +88,27 @@ CREATE TABLE IF NOT EXISTS `article_tag` (
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `comment_list`
+--
+
+CREATE TABLE IF NOT EXISTS `comment_list` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `article_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `created_at` int(11) NOT NULL,
+  `is_removed` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `article_id` (`article_id`),
+  KEY `email` (`email`),
+  KEY `created_at` (`created_at`),
+  KEY `is_removed` (`is_removed`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `config`
 --
 
@@ -88,6 +116,21 @@ CREATE TABLE IF NOT EXISTS `config` (
   `name` varchar(255) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `nav_list`
+--
+
+CREATE TABLE IF NOT EXISTS `nav_list` (
+  `name` varchar(255) NOT NULL,
+  `type` int(11) NOT NULL,
+  `parent` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `url` text NOT NULL,
+  `sort` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -101,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `tag_list` (
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 -- --------------------------------------------------------
 
@@ -116,4 +159,8 @@ CREATE TABLE IF NOT EXISTS `user_list` (
   `display_name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
